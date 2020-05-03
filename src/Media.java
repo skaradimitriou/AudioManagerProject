@@ -1,3 +1,4 @@
+import java.util.Comparator;
 
 public abstract class Media {
 
@@ -12,7 +13,7 @@ public abstract class Media {
 
     //constructor
 
-    public Media(int id, String fileName, String duration, String fileType, String description, String creator, float size, String quality) {
+    public Media(int id, String fileName, String fileType, String description, float size, String quality) {
         this.id = id;
         this.fileName = fileName;
         this.fileType = fileType;
@@ -21,7 +22,8 @@ public abstract class Media {
         this.quality = quality;
     }
 
-    //getters & setters
+
+    //getter & setter
 
     public int getId() {
         return id;
@@ -85,18 +87,8 @@ public abstract class Media {
                 '}';
     }
 
+
     //hash & equals
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
-
 
 }
 

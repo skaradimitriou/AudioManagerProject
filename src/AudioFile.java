@@ -6,11 +6,12 @@ public class AudioFile extends Media {
 
     //constructor
 
-    public AudioFile(int id, String fileName, String duration, String fileType, float size, String quality, String duration1, String singer) {
-        super(id, fileName, duration, fileType, description, creator, size, quality);
-        this.duration = duration1;
+    public AudioFile(int id, String fileName, String fileType, String description, float size, String quality, String duration, String singer) {
+        super(id, fileName, fileType, description, size, quality);
+        this.duration = duration;
         this.singer = singer;
     }
+
 
     //getter & setters
 

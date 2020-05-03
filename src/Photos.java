@@ -5,8 +5,8 @@ public class Photos extends Media {
 
     //constructor
 
-    public Photos(int id, String fileName, String duration, String fileType, float size, String quality, String photographer) {
-        super(id, fileName, duration, fileType, description, creator, size, quality);
+    public Photos(int id, String fileName, String fileType, String description, float size, String quality, String photographer) {
+        super(id, fileName, fileType, description, size, quality);
         this.photographer = photographer;
     }
 

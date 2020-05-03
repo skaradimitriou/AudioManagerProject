@@ -5,10 +5,9 @@ public class UI {
     public UserChoice menu() {
 
         UserChoice returnChoice;
-
-        System.out.println("What would you like to do?");
-        System.out.println("1. ADD 2. REMOVE 3. DISPLAY 4.DELETE 0.EXIT");
-
+        System.out.println("Hello! How can I help you today?");
+        System.out.println("1. Add a file | 2. Remove a file | 3.Display all files | 4. Clear files | 5. Find Largest File" +
+                " | 6. Save files | 7. Load files | 0. Exit");
         int choice;
 
         //user input
@@ -28,6 +27,12 @@ public class UI {
                     return UserChoice.DISPLAY;
                 case 4:
                     return UserChoice.DELETE;
+                case 5:
+                    return UserChoice.TOTALFILESIZE;
+                case 6:
+                    return UserChoice.SAVE;
+                case 7:
+                    return UserChoice.LOAD;
                 default:
                     return UserChoice.ERROR;
             }
@@ -51,6 +56,11 @@ public class UI {
         int mediaType;
 
         Scanner scanner = new Scanner(System.in);
+
+        System.out.println("What type of file would you like to add to the system?");
+        System.out.println("1. Photo file | 2. Audio file | 3. Video file");
+
+        mediaType = scanner.nextInt();
 
         System.out.println("Give the media id");
         id = scanner.nextInt();
@@ -81,16 +91,16 @@ public class UI {
             case 2:
                 System.out.println("Give the track duration");
                 duration = scanner.next();
-                System.out.println("Give the singer");
+                System.out.println("Give the track singer");
                 singer = scanner.next();
                 media = new AudioFile(id,fileName,fileType,description,size,quality,duration,singer);
                 return media;
             case 3:
                 System.out.println("Give the video duration");
                 duration = scanner.next();
-                System.out.println("Give color");
+                System.out.println("Give the video producer");
                 producer = scanner.next();
-                media = new VideoFile(id,fileName,fileType,description,size,quality,producer);
+                media = new VideoFile(id,fileName,fileType,description,size,quality,duration,producer);
                 return media;
             default:
                 return null;
@@ -122,6 +132,16 @@ public class UI {
                 case DELETE:
                     mediaManagement.deleteMedia();
                     break;
+                case SAVE:
+                    mediaManagement.saveFiles("my_media_files.txt");
+                    System.out.println("Your file has been saved");
+                    break;
+                case LOAD:
+                    mediaManagement.loadFiles("my_media_files.txt");
+                    System.out.println("Load successful");
+                break;
+                case TOTALFILESIZE:
+                    mediaManagement.largestMediaSize();
                 case EXIT:
                     return;
                 case ERROR:

@@ -6,9 +6,9 @@ public class VideoFile extends Media{
 
     //constructor
 
-    public VideoFile(int id, String fileName, String duration, String fileType, float size, String quality, String duration1) {
-        super(id, fileName, duration, fileType, description, creator, size, quality);
-        this.duration = duration1;
+    public VideoFile(int id, String fileName, String fileType, String description, float size, String quality, String duration, String producer) {
+        super(id, fileName, fileType, description, size, quality);
+        this.duration = duration;
         this.producer = producer;
     }
 

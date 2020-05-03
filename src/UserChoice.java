@@ -5,5 +5,8 @@ public enum UserChoice {
     DISPLAY,
     DELETE,
     ERROR,
+    TOTALFILESIZE,
+    SAVE,
+    LOAD,
     EXIT;
 }
